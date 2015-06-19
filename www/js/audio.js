@@ -142,13 +142,16 @@ function setAudioPosition(position) {
 
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
+    alert('ConvertirFicheroAudioToBase64');
     fileSystem.root.getFile(myFileName, null, LeerFicheroAudio, LeerFicheroAudioError2);
 }
 function LeerFicheroAudio(fileEntry) {
+    alert('LeerFicheroAudio');
     fileEntry.file(LeerFicheroAudioOK, LeerFicheroAudioError);
 }
 // the file is successfully retreived
 function LeerFicheroAudioOK(file){
+    alert('LeerFicheroAudioOK');
     TransformarFicheroAudioToBase64(file);
 }
 function LeerFicheroAudioError1(error) {
@@ -161,6 +164,7 @@ function LeerFicheroAudioError2(error) {
 }
 // turn the file into a base64 encoded string, and update the var base to this value.
 function TransformarFicheroAudioToBase64(file) {
+    alert('TransformarFicheroAudioToBase64');
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         alert(evt.target.result);
