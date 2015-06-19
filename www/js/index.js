@@ -16,42 +16,43 @@ var app = {
 function deviceReady() {
     try {
 
-        // window.requestFileSystem is recognized, so far so good.
-        window.requestFileSystem(1, 0, function(fileSystem){
-        }, function(e){
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+
+        //window.requestFileSystem(1, 0, function(fileSystem){
+        //}, function(e){
             // 'e' is an object, {code: 'Class not found'}
-            alert('Error accessing local file system');
-        });
+            //alert('Error accessing local file system');
+        //});
     }
     catch (ex) {
         alert("deviceReady error: "+ex.message);
     }
 }
 
-var requestFileSystem = function(type, size, successCallback, errorCallback) {
-    argscheck.checkArgs('nnFF', 'requestFileSystem', arguments);
-    var fail = function(code) {
-        errorCallback && errorCallback(new FileError(code));
-    };
-
-    if (type < 0) {
-        fail(FileError.SYNTAX_ERR);
-    } else {
-        // if successful, return a FileSystem object
-        var success = function(file_system) {
-            if (file_system) {
-                if (successCallback) {
-                    // grab the name and root from the file system object
-                    var result = new FileSystem(file_system.name, file_system.root);
-                    successCallback(result);
-                }
-            }
-            else {
-                // no FileSystem object returned
-                fail(FileError.NOT_FOUND_ERR);
-            }
-        };
-        // The error happens in exec()
-        exec(success, fail, "File", "requestFileSystem", [type, size]);
-    }
-};
+//var requestFileSystem = function(type, size, successCallback, errorCallback) {
+//    argscheck.checkArgs('nnFF', 'requestFileSystem', arguments);
+//    var fail = function(code) {
+//        errorCallback && errorCallback(new FileError(code));
+//    };
+//
+//    if (type < 0) {
+//        fail(FileError.SYNTAX_ERR);
+//    } else {
+//        // if successful, return a FileSystem object
+//        var success = function(file_system) {
+//            if (file_system) {
+//                if (successCallback) {
+//                    // grab the name and root from the file system object
+//                    var result = new FileSystem(file_system.name, file_system.root);
+//                    successCallback(result);
+//                }
+//            }
+//            else {
+//                // no FileSystem object returned
+//                fail(FileError.NOT_FOUND_ERR);
+//            }
+//        };
+//        // The error happens in exec()
+//        exec(success, fail, "File", "requestFileSystem", [type, size]);
+//    }
+//};

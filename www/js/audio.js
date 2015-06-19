@@ -37,50 +37,53 @@ function recordAudioFin() {
 function gotFS(fileSystem) {
     fileSystem.root.getFile(myFileName, {create: true, exclusive: false}, gotFileEntry, onError);
 }
+function onError(error) {
+    alert('gotFS  \n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+}
 
 function gotFileEntry(fileEntry) {
 
-    var fileUri = fileEntry.toURI();
-    var scr = fileEntry.toURI();
-
-    my_media = new Media(myFileName, onSuccess('Play'), onError);
-
-    // Play audio
-    my_media.play();
-
-    // Update my_media position every second
-    if (mediaTimer == null) {
-        mediaTimer = setInterval(function() {
-            // get my_media position
-            my_media.getCurrentPosition(
-                // success callback
-                function(position) {
-                    if (position > -1) {
-                        var iPos = parseInt(position);
-                        if (iPos < 10) {
-                            setAudioPosition("0:0" + (iPos), 0);
-                        }
-                        else
-                        {
-                            setAudioPosition("0:" + (iPos), 0);
-                        }
-                        if (iPos==0){
-                            setAudioPosition("", 0);
-                            document.getElementById('playAudio_Push').src="img/play.png";
-                        }
-                        else{
-                            document.getElementById('playAudio_Push').src="img/stop.png";
-                        }
-                    }
-                },
-                // error callback
-                function(e) {
-                    alert("Error getting pos=" + e);
-                    setAudioPosition("Error: " + e, 1);
-                }
-            );
-        }, setInt * 100);
-    }
+    //var fileUri = fileEntry.toURI();
+    //var scr = fileEntry.toURI();
+    //
+    //my_media = new Media(myFileName, onSuccess('Play'), onError);
+    //
+    //// Play audio
+    //my_media.play();
+    //
+    //// Update my_media position every second
+    //if (mediaTimer == null) {
+    //    mediaTimer = setInterval(function() {
+    //        // get my_media position
+    //        my_media.getCurrentPosition(
+    //            // success callback
+    //            function(position) {
+    //                if (position > -1) {
+    //                    var iPos = parseInt(position);
+    //                    if (iPos < 10) {
+    //                        setAudioPosition("0:0" + (iPos), 0);
+    //                    }
+    //                    else
+    //                    {
+    //                        setAudioPosition("0:" + (iPos), 0);
+    //                    }
+    //                    if (iPos==0){
+    //                        setAudioPosition("", 0);
+    //                        document.getElementById('playAudio_Push').src="img/play.png";
+    //                    }
+    //                    else{
+    //                        document.getElementById('playAudio_Push').src="img/stop.png";
+    //                    }
+    //                }
+    //            },
+    //            // error callback
+    //            function(e) {
+    //                alert("Error getting pos=" + e);
+    //                setAudioPosition("Error: " + e, 1);
+    //            }
+    //        );
+    //    }, setInt * 100);
+    //}
 }
 
 function PlayAudioInicio() {
