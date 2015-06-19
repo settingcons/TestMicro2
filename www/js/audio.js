@@ -23,7 +23,7 @@ function recordAudioFin() {
     try{
         document.getElementById('audio_position').innerHTML = "recordAudioFin";
         mi_mediaAudioGrabar.stopRecord();
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, LeerFicheroAudioError);
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, LeerFicheroAudioError1);
     }
     catch (ex){
         alert("recordAudioFin "+ ex.message)
@@ -139,7 +139,7 @@ function setAudioPosition(position) {
 
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
-    fileSystem.root.getFile(myFileName, null, LeerFicheroAudio, LeerFicheroAudioError);
+    fileSystem.root.getFile(myFileName, null, LeerFicheroAudio, LeerFicheroAudioError2);
 }
 function LeerFicheroAudio(fileEntry) {
     fileEntry.file(LeerFicheroAudioOK, LeerFicheroAudioError);
@@ -148,9 +148,13 @@ function LeerFicheroAudio(fileEntry) {
 function LeerFicheroAudioOK(file){
     TransformarFicheroAudioToBase64(file);
 }
-function LeerFicheroAudioError(error) {
+function LeerFicheroAudioError1(error) {
     sFichero='';
-    alert(error.message,"error");
+    alert('FIN AUDIO ERROR \n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+}
+function LeerFicheroAudioError2(error) {
+    sFichero='';
+    alert('CONVERTIR AUDIO ERROR  \n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
 }
 // turn the file into a base64 encoded string, and update the var base to this value.
 function TransformarFicheroAudioToBase64(file) {
