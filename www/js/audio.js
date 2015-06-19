@@ -147,7 +147,7 @@ function ConvertirFicheroAudioToBase64(fileSystem) {
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
-    fileEntry.file(LeerFicheroAudioOK, LeerFicheroAudioError);
+    fileEntry.file(LeerFicheroAudioOK, LeerFicheroAudioError3);
 }
 // the file is successfully retreived
 function LeerFicheroAudioOK(file){
@@ -161,6 +161,10 @@ function LeerFicheroAudioError1(error) {
 function LeerFicheroAudioError2(error) {
     sFichero='';
     alert('CONVERTIR AUDIO ERROR  \n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+}
+function LeerFicheroAudioError3(error) {
+    sFichero='';
+    alert('LEER AUDIO ERROR  \n code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
 }
 // turn the file into a base64 encoded string, and update the var base to this value.
 function TransformarFicheroAudioToBase64(file) {
