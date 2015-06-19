@@ -1,7 +1,7 @@
 var mi_mediaAudioGrabar;
 var mi_mediaAudioReproducir;
-var src = "myrecording.mpeg";
-var Nuevo="sound.mp3"
+var src = "myrecording.wav";
+var Nuevo="sound.wav"
 var sFichero;
 function recordAudioInicio() {
     try{
@@ -89,7 +89,7 @@ function PlayAudioInicio() {
         window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirBase64ToFicheroAudio, EscribirFicheroAudioError);
 
 
-        var file = new Parse.File("sound.mp3", { base64: sFichero });
+        var file = new Parse.File("sound.wav", { base64: sFichero });
         file.save().then(function() {
            alert("bien parse");
         }, function(error) {
@@ -101,7 +101,7 @@ function PlayAudioInicio() {
         //var writer = new FileWriter();
         //writer.write(sFich);
 
-        mi_mediaAudioReproducir = new Media("sound.mp3", onSuccessAudio, onErrorAudio);
+        mi_mediaAudioReproducir = new Media("sound.wav", onSuccessAudio, onErrorAudio);
 
         // Play audio
         mi_mediaAudioReproducir.play();
@@ -153,7 +153,7 @@ function LeerFicheroAudioError(error) {
 function TransformarFicheroAudioToBase64(file) {
     var reader = new FileReader();
     reader.onloadend = function(evt) {
-        //alert(evt.target.result);
+        alert(evt.target.result);
         sFichero = evt.target.result;
         sFichero  =   sFichero.toString().substring(sFichero.toString().indexOf(",")+1);
     };
