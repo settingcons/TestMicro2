@@ -1,13 +1,15 @@
 var mi_mediaAudioGrabar;
 var mi_mediaAudioReproducir;
-var src = "myrecording.wav";
-var Nuevo="sound.wav"
+//var src = "myrecording.wav";
+var myFileName = "myfile001.wav";
+//var Nuevo="sound.wav"
 var sFichero;
+
 function recordAudioInicio() {
     try{
         document.getElementById('audio_position').innerHTML = "recordAudioInicio";
 
-        mi_mediaAudioGrabar = new Media(src,onSuccessAudio,onErrorAudio);
+        mi_mediaAudioGrabar = new Media(myFileName,onSuccessAudio,onErrorAudio);
 
         // Record audio
         mi_mediaAudioGrabar.startRecord();
@@ -41,7 +43,7 @@ function gotFileEntry(fileEntry) {
     var fileUri = fileEntry.toURI();
     var scr = fileEntry.toURI();
 
-    my_media = new Media(scr, onSuccess('Play'), onError);
+    my_media = new Media(myFileName, onSuccess('Play'), onError);
 
     // Play audio
     my_media.play();
@@ -122,6 +124,7 @@ function PlayAudioFin() {
 }
 
 function onSuccessAudio() {
+    alert('onSuccessAudio');
 }
 
 function onErrorAudio(error) {
@@ -136,7 +139,7 @@ function setAudioPosition(position) {
 
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
-    fileSystem.root.getFile(src, null, LeerFicheroAudio, LeerFicheroAudioError);
+    fileSystem.root.getFile(myFileName, null, LeerFicheroAudio, LeerFicheroAudioError);
 }
 function LeerFicheroAudio(fileEntry) {
     fileEntry.file(LeerFicheroAudioOK, LeerFicheroAudioError);
