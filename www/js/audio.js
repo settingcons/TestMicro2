@@ -2,6 +2,7 @@ var mi_mediaAudioGrabar;
 var mi_mediaAudioReproducir;
 //var src = "myrecording.wav";
 var myFileName = "myfile001.wav";
+var myFileNameURI = "";
 //var Nuevo="sound.wav"
 var sFichero;
 
@@ -9,7 +10,7 @@ function recordAudioInicio() {
     try{
         document.getElementById('audio_position').innerHTML = "recordAudioInicio";
 
-        mi_mediaAudioGrabar = new Media(myFileName,onSuccessAudio,onErrorAudio);
+        mi_mediaAudioGrabar = new Media(myFileNameURI,onSuccessAudio,onErrorAudio);
 
         // Record audio
         mi_mediaAudioGrabar.startRecord();
@@ -42,7 +43,10 @@ function onError(error) {
 }
 
 function gotFileEntry(fileEntry) {
+myFileNameURI=fileEntry.toURI();
 
+    alert('URI: '+fileEntry.toURI());
+    alert('fullPath: '+fileEntry.fullPath);
     //var fileUri = fileEntry.toURI();
     //var scr = fileEntry.toURI();
     //
@@ -91,25 +95,28 @@ function PlayAudioInicio() {
     //fileSystem.root.getFile(myFileName, {create: true, exclusive: false}, gotFileEntry(), onError);
     try {
         document.getElementById('audio_position').innerHTML = "PlayAudioInicio";
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirBase64ToFicheroAudio, EscribirFicheroAudioError);
+        //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirBase64ToFicheroAudio, EscribirFicheroAudioError);
 
 
-        var file = new Parse.File("sound.wav", { base64: sFichero });
-        file.save().then(function() {
-           alert("bien parse");
-        }, function(error) {
-            alert("mal parse "+error.message);
-            // The file either could not be read, or could not be saved to Parse.
-        });
+        //var file = new Parse.File("sound.wav", { base64: sFichero });
+        //file.save().then(function() {
+        //   alert("bien parse");
+        //}, function(error) {
+        //    alert("mal parse "+error.message);
+        //    // The file either could not be read, or could not be saved to Parse.
+        //});
 
         //var sFich="data:audio/mpeg;base64," + sFichero;
         //var writer = new FileWriter();
         //writer.write(sFich);
 
-        mi_mediaAudioReproducir = new Media("sound.wav", onSuccessAudio, onErrorAudio);
+        alert('1');
+        mi_mediaAudioReproducir = new Media(myFileNameURI, onSuccessAudio, onErrorAudioPlay);
+        alert('2');
 
         // Play audio
         mi_mediaAudioReproducir.play();
+        alert('3');
     }
     catch (ex) {
         alert("PlayAudioInicio "+ ex.message)
@@ -131,6 +138,10 @@ function onSuccessAudio() {
 }
 
 function onErrorAudio(error) {
+    alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+}
+
+function onErrorAudioPlay(error) {
     alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
 }
 
