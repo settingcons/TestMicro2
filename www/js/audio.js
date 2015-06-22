@@ -25,8 +25,7 @@ function recordAudioFin() {
     try{
         document.getElementById('audio_position').innerHTML = "recordAudioFin";
         mi_mediaAudioGrabar.stopRecord();
-        //window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, LeerFicheroAudioError1);
-        window.requestFileSystem(4, 0, ConvertirFicheroAudioToBase64, LeerFicheroAudioError1);
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, LeerFicheroAudioError1);
     }
     catch (ex){
         alert("recordAudioFin "+ ex.message)
@@ -112,13 +111,10 @@ function PlayAudioInicio() {
         //var writer = new FileWriter();
         //writer.write(sFich);
 
-        alert('1');
         mi_mediaAudioReproducir = new Media(myFileNameURI, onSuccessAudio, onErrorAudioPlay);
-        alert('2');
 
         // Play audio
         mi_mediaAudioReproducir.play();
-        alert('3');
     }
     catch (ex) {
         alert("PlayAudioInicio "+ ex.message)
@@ -158,7 +154,7 @@ function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
     //myFileNameTEMP=cordova.file.tempDirectory + myFileName;
     //alert(myFileNameTEMP);
-    fileSystem.root.getFile(myFileName, null, LeerFicheroAudio, LeerFicheroAudioError2);
+    fileSystem.root.getFile(myFileNameURI, null, LeerFicheroAudio, LeerFicheroAudioError2);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
