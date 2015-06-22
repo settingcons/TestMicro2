@@ -164,6 +164,7 @@ function LeerFicheroAudio(fileEntry) {
 function LeerFicheroAudioOK(file){
     alert('LeerFicheroAudioOK');
     TransformarFicheroAudioToBase64(file);
+    TransformarFicheroAudiotxtToBase64(file);
 }
 function LeerFicheroAudioError1(error) {
     sFichero='';
@@ -189,6 +190,16 @@ function TransformarFicheroAudioToBase64(file) {
     reader.readAsDataURL(file);
 }
 
+function TransformarFicheroAudiotxtToBase64(file) {
+    alert('TransformarFicheroAudioToBase64');
+    var reader = new FileReader();
+    reader.onloadend = function(evt) {
+        alert(evt.target.result);
+        sFichero = evt.target.result;
+        sFichero  =   sFichero.toString().substring(sFichero.toString().indexOf(",")+1);
+    };
+    reader.readAsText(file);
+}
 
 
 function EscribirFicheroAudioError(error) {
