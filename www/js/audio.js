@@ -154,7 +154,7 @@ function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
     //myFileNameTEMP=cordova.file.tempDirectory + myFileName;
     //alert(myFileNameTEMP);
-    fileSystem.root.getFile(myFileNameURI,  {create: false, exclusive: false}, LeerFicheroAudio, LeerFicheroAudioError2);
+    fileSystem.root.getFile(myFileName,  {create: false}, LeerFicheroAudio, LeerFicheroAudioError2);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
