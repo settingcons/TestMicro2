@@ -3,6 +3,7 @@ var mi_mediaAudioReproducir;
 //var src = "myrecording.wav";
 var myFileName = "myfile001.wav";
 var myFileNameURI = "";
+var myFileNameTEMP = "";
 //var Nuevo="sound.wav"
 var sFichero;
 
@@ -43,7 +44,7 @@ function onError(error) {
 }
 
 function gotFileEntry(fileEntry) {
-myFileNameURI=fileEntry.toURI();
+myFileNameURI=fileEntry.fullPath;
 
     alert('URI: '+fileEntry.toURI());
     alert('fullPath: '+fileEntry.fullPath);
@@ -154,7 +155,9 @@ function setAudioPosition(position) {
 
 function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
-    fileSystem.root.getFile(myFileName, null, LeerFicheroAudio, LeerFicheroAudioError2);
+    myFileNameTEMP=cordova.file.tempDirectory + myFileName;
+    alert(myFileNameTEMP);
+    fileSystem.root.getFile(myFileNameTEMP, null, LeerFicheroAudio, LeerFicheroAudioError2);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
