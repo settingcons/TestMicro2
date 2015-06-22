@@ -154,7 +154,7 @@ function ConvertirFicheroAudioToBase64(fileSystem) {
     alert('ConvertirFicheroAudioToBase64');
     //myFileNameTEMP=cordova.file.tempDirectory + myFileName;
     //alert(myFileNameTEMP);
-    fileSystem.root.getFile(myFileName,{create: false}, LeerFicheroAudio, LeerFicheroAudioError2);
+    fileSystem.root.getFile(myFileName,{create: false,exclusive:false}, LeerFicheroAudio, LeerFicheroAudioError2);
 }
 function LeerFicheroAudio(fileEntry) {
     alert('LeerFicheroAudio');
@@ -164,7 +164,6 @@ function LeerFicheroAudio(fileEntry) {
 function LeerFicheroAudioOK(file){
     alert('LeerFicheroAudioOK');
     TransformarFicheroAudioToBase64(file);
-    TransformarFicheroAudiotxtToBase64(file);
 }
 function LeerFicheroAudioError1(error) {
     sFichero='';
@@ -181,6 +180,7 @@ function LeerFicheroAudioError3(error) {
 // turn the file into a base64 encoded string, and update the var base to this value.
 function TransformarFicheroAudioToBase64(file) {
     alert('TransformarFicheroAudioToBase64');
+    file.type='audio/wav';
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         alert(evt.target.result);
@@ -190,16 +190,6 @@ function TransformarFicheroAudioToBase64(file) {
     reader.readAsDataURL(file);
 }
 
-function TransformarFicheroAudiotxtToBase64(file) {
-    alert('TransformarFicheroAudioToBase64');
-    var reader = new FileReader();
-    reader.onloadend = function(evt) {
-        alert(evt.target.result);
-        sFichero = evt.target.result;
-        sFichero  =   sFichero.toString().substring(sFichero.toString().indexOf(",")+1);
-    };
-    reader.readAsText(file);
-}
 
 
 function EscribirFicheroAudioError(error) {
