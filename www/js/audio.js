@@ -25,7 +25,7 @@ function recordAudioFin() {
     try{
         document.getElementById('audio_position').innerHTML = "recordAudioFin";
         mi_mediaAudioGrabar.stopRecord();
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, LeerFicheroAudioError1);
+        window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, ConvertirFicheroAudioToBase64, LeerFicheroAudioError1);
     }
     catch (ex){
         alert("recordAudioFin "+ ex.message)

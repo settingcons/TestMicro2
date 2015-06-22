@@ -16,7 +16,7 @@ var app = {
 function deviceReady() {
     try {
 
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, onErrorDevideReady);
+        window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, gotFS, onErrorDevideReady);
 
         //window.requestFileSystem(1, 0, function(fileSystem){
         //}, function(e){
