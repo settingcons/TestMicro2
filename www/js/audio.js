@@ -1,7 +1,7 @@
 var mi_mediaAudioGrabar;
 var mi_mediaAudioReproducir;
 //var src = "myrecording.wav";
-var myFileName = "myfile001.wav";
+var myFileName = "myfile001.mpeg";
 var myFileNameURI = "";
 var myFileNameTEMP = "";
 //var Nuevo="sound.wav"
@@ -180,7 +180,7 @@ function LeerFicheroAudioError3(error) {
 // turn the file into a base64 encoded string, and update the var base to this value.
 function TransformarFicheroAudioToBase64(file) {
     alert('TransformarFicheroAudioToBase64');
-    file.type='audio/wav';
+    file.type='audio/mpeg';
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         alert(evt.target.result);
