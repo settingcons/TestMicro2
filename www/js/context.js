@@ -33,7 +33,8 @@ function deviceReady() {
 }
 
 function Reproducir0(){
-    loadSound_2();
+    v_fichero = "audio/1ra-e.mp3";
+    loadSound_2(v_fichero);
 }
 
 
@@ -55,18 +56,13 @@ var mySource;
 function bufferSoundiOS(event) {
     alert('Entra bufferSoundiOS');
     var request = event.target;
-    alert('1 bufferSoundiOS');
     var source = context.createBufferSource();
-    alert('2 bufferSoundiOS');
     source.buffer = context.createBuffer(request.response, false);
-    alert('3 bufferSoundiOS');
     mySource = source;
-    alert('4 bufferSoundiOS');
     source.start(0);
-    alert('5 bufferSoundiOS');
 }
 
-function loadSound_2() {
+function loadSound_2(url) {
     try
     {
         // Create a instance of AudioContext interface
@@ -78,7 +74,7 @@ function loadSound_2() {
         //now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
         //here we will retrieve audio binary data via AJAX
         var request = new XMLHttpRequest();
-        request.open('GET', 'audio/1ra-e.mp3', true);
+        request.open('GET', url, true);
         request.responseType = 'arraybuffer'; //This asks the browser to populate the retrieved binary data in a array buffer
         request.onload = function(){
             //populate audio source from the retrieved binary data. This can be done using decodeAudioData function.
@@ -98,7 +94,14 @@ function loadSound_2() {
          */
 
         //now play the sound.
-        source.start(0);
+
+        if(esIOS()){
+            source.noteOn(0);
+        }
+        else{
+            source.start(0);
+        }
+
     }
     catch(e)
     {
