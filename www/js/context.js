@@ -7,6 +7,7 @@ function deviceReady() {
         //context = new AudioContext();
 
         if(esIOS()){
+            alert('esIOS: deviceReady');
             context = new window.webkitAudioContext;
         }
         else{
@@ -30,6 +31,15 @@ function Reproducir(){
 }
 
 
+var mySource;
+function bufferSoundiOS(event) {
+    alert('Entra bufferSoundiOS');
+    var request = event.target;
+    var source = context.createBufferSource();
+    source.buffer = context.createBuffer(request.response, false);
+    mySource = source;
+    mySource.noteOn(0);
+}
 
 function loadSound(url) {
     try {
@@ -37,17 +47,24 @@ function loadSound(url) {
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.responseType = 'arraybuffer';
-
         alert('loadSound1');
-        request.onload = function() {
-            alert('loadSound2');
-            context.decodeAudioData(request.response, function(buffer) {
-                alert('ok');
-                sound = buffer;
-                playSound(sound);
-                alert('Después playSound');
-            },ErrorLoad);
+
+        if(esIOS()){
+            alert('esIOS: loadSound');
+            request.addEventListener('load', bufferSoundiOS, false);
         }
+        else{
+            request.onload = function() {
+                alert('loadSound2');
+                context.decodeAudioData(request.response, function(buffer) {
+                    alert('ok');
+                    sound = buffer;
+                    playSound(sound);
+                    alert('Después playSound');
+                },ErrorLoad);
+            }
+        }
+
 //        request.onload = function () {
 //            // request.response is encoded... so decode it now
 //            alert('antes');
