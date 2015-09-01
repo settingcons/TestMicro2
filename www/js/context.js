@@ -42,7 +42,7 @@ function bufferSoundiOS(event) {
     alert('3 bufferSoundiOS');
     mySource = source;
     alert('4 bufferSoundiOS');
-    mySource.start(0);
+    source.noteOn();
     alert('5 bufferSoundiOS');
 }
 
