@@ -71,6 +71,17 @@ function loadSound_2(url) {
 
         var source = context.createBufferSource(); //this represents the audio source. We need to now populate it with binary data.
 
+        try{
+            if(esIOS()){
+                source.noteOff(0);
+            }
+            else{
+                source.stop();
+            }
+
+        }
+        catch (ex) {}
+
         //now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
         //here we will retrieve audio binary data via AJAX
         var request = new XMLHttpRequest();
