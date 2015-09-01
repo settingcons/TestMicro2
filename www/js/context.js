@@ -3,8 +3,16 @@ var sound;
 var source;
 function deviceReady() {
     try {
-        window.AudioContext = window.AudioContext || window.webkitAudioContext;
-        context = new AudioContext();
+        //window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        //context = new AudioContext();
+
+        if(esIOS()){
+            context = new window.webkitAudioContext;
+        }
+        else{
+            context = new window.AudioContext || window.webkitAudioContext;
+        }
+
     }
     catch (ex){alert('deviceReady: '+ex.message);}
 }
