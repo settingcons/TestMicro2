@@ -83,28 +83,31 @@ function parar(){
 function ObtenerFicheroAudio(){
     if(esIOS())
     {
-        //alert('ios');
+        alert('ios');
         //return _mediaAudioFicheroIOS;
         return _mediaAudioFicheroIOSFullPath;
     }
     else
     {
-        //alert('no ios');
+        alert('no ios');
         return _mediaAudioFichero;
     }
 }
 
 function AudioGrabacionConfirma() {
     try{
+        alert('AudioGrabacionConfirma');
         var v_mensaje = "s'està gravant al teu missatge de veu...";
         var v_titulo = "Gravació";
         var v_botones = "Finalitzar,Descartar";
 
         var v_imagen = document.getElementById('imgAudioPlay');
         v_imagen.src = "images/play_gray.png";
+        alert(v_imagen.src);
 
         //Iniciar Grabación
         var v_fichero=ObtenerFicheroAudio();
+
         _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
         _mediaAudio.startRecord();
 
