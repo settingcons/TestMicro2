@@ -1,18 +1,30 @@
 var context;
 var sound;
 var source;
+
+
+var audio = new Audio();
+audio.loop = false;
+audio.autoplay = false;
+
+window.addEventListener("load", initMp3Player, false);
+
+function initMp3Player(){
+
+    context = new webkitAudioContext();
+    analyser = context.createAnalyser();
+
+    canvas = document.getElementById('analyser_render');
+    ctx = canvas.getContext('2d');
+    source = context.createMediaElementSource(audio);
+    source.connect(analyser);
+    analyser.connect(context.destination);
+
+}
+
 function deviceReady() {
     try {
-        //window.AudioContext = window.AudioContext || window.webkitAudioContext;
-        //context = new AudioContext();
-
-        if(esIOS()){
-            //context = new window.webkitAudioContext;
-            window.AudioContext = window.AudioContext || window.webkitAudioContext;
-        }
-        else{
-            window.AudioContext = window.AudioContext || window.webkitAudioContext;
-        }
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
         context = new AudioContext();
 
     }
@@ -49,7 +61,7 @@ function bufferSoundiOS(event) {
 
 function loadSound(url) {
     try {
-        alert(url);
+        //alert(url);
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.responseType = 'arraybuffer';
@@ -60,7 +72,8 @@ function loadSound(url) {
             request.addEventListener('load', bufferSoundiOS, false);
         }
         else{
-            request.onload = function() {
+            //NOOO // request.addEventListener('load', bufferSound, false);
+            /*request.onload = function() {
                 alert('loadSound2');
                 context.decodeAudioData(request.response, function(buffer) {
                     alert('ok');
@@ -68,7 +81,7 @@ function loadSound(url) {
                     playSound(sound);
                     alert('Después playSound');
                 },ErrorLoad);
-            }
+            }*/
         }
 
 //        request.onload = function () {
@@ -104,6 +117,19 @@ function playSound(buffer) {
 function parar(){
     source.stop();
 }
+
+function play(idx){
+    switch(idx) {
+        case 0:
+            audio.src = "audio/1ra-e.mp3";
+            break;
+        case 1:
+            audio.src = "audio/testaudio.wav";
+            break;
+    }
+    audio.play();
+}
+
 
 /***********************************************************************************************************/
 /***********************************************************************************************************/
