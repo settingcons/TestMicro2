@@ -35,10 +35,15 @@ var mySource;
 function bufferSoundiOS(event) {
     alert('Entra bufferSoundiOS');
     var request = event.target;
+    alert('1 bufferSoundiOS');
     var source = context.createBufferSource();
+    alert('2 bufferSoundiOS');
     source.buffer = context.createBuffer(request.response, false);
+    alert('3 bufferSoundiOS');
     mySource = source;
+    alert('4 bufferSoundiOS');
     mySource.start(0);
+    alert('5 bufferSoundiOS');
 }
 
 function loadSound(url) {
