@@ -106,7 +106,7 @@ function AudioGrabacionConfirma() {
 
         //Iniciar Grabación
         var v_fichero=ObtenerFicheroAudio();
-        alert('1.2- ' + v_fichero);
+        alert('1.2- Fichero: ' + v_fichero);
 
         _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
         _mediaAudio.startRecord();
