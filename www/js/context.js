@@ -83,39 +83,43 @@ function parar(){
 function ObtenerFicheroAudio(){
     if(esIOS())
     {
-        alert('ios');
+        //alert('ios');
         //return _mediaAudioFicheroIOS;
         return _mediaAudioFicheroIOSFullPath;
     }
     else
     {
-        alert('no ios');
+        //alert('no ios');
         return _mediaAudioFichero;
     }
 }
 
 function AudioGrabacionConfirma() {
     try{
-        alert('AudioGrabacionConfirma');
+        alert('1.1- AudioGrabacionConfirma');
         var v_mensaje = "s'està gravant al teu missatge de veu...";
         var v_titulo = "Gravació";
         var v_botones = "Finalitzar,Descartar";
 
         var v_imagen = document.getElementById('imgAudioPlay');
         v_imagen.src = "images/play_gray.png";
-        alert(v_imagen.src);
 
         //Iniciar Grabación
         var v_fichero=ObtenerFicheroAudio();
+        alert('1.2- ' + v_fichero);
 
         _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
         _mediaAudio.startRecord();
 
+        alert('1.3- ' + startRecord);
+
         if(navigator.notification && navigator.notification.confirm){
+            alert('1.4- navigator.notification');
             navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
         }
         else
         {
+            alert('1.5- ' + v_mensaje);
             var v_retorno = confirm(v_mensaje);
             if (v_retorno){
                 AudioGrabacion(1);
@@ -125,7 +129,7 @@ function AudioGrabacionConfirma() {
             }
         }
     }
-    catch (ex){mensaje(ex.message,"error");}
+    catch (ex){mensaje('ERROR - ' + ex.message,"error");}
 }
 function onSuccessAudio() {
 }
