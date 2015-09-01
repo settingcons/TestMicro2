@@ -38,7 +38,7 @@ function bufferSoundiOS(event) {
     var source = context.createBufferSource();
     source.buffer = context.createBuffer(request.response, false);
     mySource = source;
-    mySource.noteOn(0);
+    mySource.start(0);
 }
 
 function loadSound(url) {
