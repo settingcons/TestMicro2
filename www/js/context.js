@@ -8,12 +8,12 @@ function deviceReady() {
 
         if(esIOS()){
             //context = new window.webkitAudioContext;
-            context = new window.AudioContext || window.webkitAudioContext;
-
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
         }
         else{
-            context = new window.AudioContext || window.webkitAudioContext;
+            window.AudioContext = window.AudioContext || window.webkitAudioContext;
         }
+        context = new AudioContext();
 
     }
     catch (ex){alert('deviceReady: '+ex.message);}
