@@ -7,8 +7,9 @@ function deviceReady() {
         //context = new AudioContext();
 
         if(esIOS()){
-            alert('esIOS: deviceReady');
-            context = new window.webkitAudioContext;
+            //context = new window.webkitAudioContext;
+            context = new window.AudioContext || window.webkitAudioContext;
+
         }
         else{
             context = new window.AudioContext || window.webkitAudioContext;
