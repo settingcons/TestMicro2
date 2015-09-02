@@ -63,7 +63,8 @@ document.getElementById('recordAudio_Push').addEventListener('touchstart',functi
     startTime = new Date().getTime();
     flag = false;
 
-    document.getElementById('lbllegend0').innerHTML="Grabando...";
+    //document.getElementById('lbllegend0').innerHTML="Grabando...";
+    document.getElementById('lbllegend').innerHTML="Grabando... DESLICE PARA CANCELAR";
     document.getElementById('divlegend').style.visibility="visible";
     //document.getElementById('recImg').style.visibility="visible";
     //document.getElementById('recordAudio_Push').src="img/micro_push_rec.png";
@@ -87,7 +88,7 @@ document.getElementById('recordAudio_Push').addEventListener('touchmove',functio
     recStatus = 0;
 
     //Ocultamos leyenda de Cancelar
-    document.getElementById('lbllegend0').innerHTML="Grabación CANCELADA...";
+    //document.getElementById('lbllegend0').innerHTML="Grabación CANCELADA...";
     document.getElementById('divlegend').style.visibility="hidden";
 
     // Ocultamos el icono de grabacion que parpadea
@@ -124,7 +125,7 @@ document.getElementById('recordAudio_Push').addEventListener('touchend',function
         // ha ido bien
 
         //Ocultamos leyenda de Cancelar
-        document.getElementById('lbllegend0').innerHTML="Grabación CORRECTA...";
+        //document.getElementById('lbllegend0').innerHTML="Grabación CORRECTA...";
         document.getElementById('divlegend').style.visibility="hidden";
 
         // Ocultamos el icono (pequeño) de grabacion que parpadea
@@ -143,7 +144,7 @@ document.getElementById('recordAudio_Push').addEventListener('touchend',function
         //No ha ido bien
 
         //Ocultamos leyenda de Cancelar
-        document.getElementById('lbllegend0').innerHTML="Grabación ERRONEA...";
+        //document.getElementById('lbllegend0').innerHTML="Grabación ERRONEA...";
         document.getElementById('divlegend').style.visibility="hidden";
 
         // Ocultamos el icono de grabacion que parpadea
