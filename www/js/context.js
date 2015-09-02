@@ -6,6 +6,7 @@ var source;
 var audio = new Audio();
 audio.loop = false;
 audio.autoplay = false;
+var v_ficheroREC = "myfile001.wav";
 
 window.addEventListener("load", initMp3Player, false);
 
@@ -34,8 +35,8 @@ function deviceReady() {
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
-    //v_fichero = "audio/testaudio.wav";
-    v_fichero = "audio/myfile001.wav";
+    v_fichero = "audio/testaudio.wav";
+    //v_fichero = "audio/myfile001.wav";
     loadSound_2(v_fichero);
 }
 
@@ -220,7 +221,6 @@ function ObtenerFicheroAudio(){
 
 function AudioGrabacionConfirma() {
     try{
-        alert('1.1- AudioGrabacionConfirma');
         var v_mensaje = "s'està gravant al teu missatge de veu...";
         var v_titulo = "Gravació";
         var v_botones = "Finalitzar,Descartar";
@@ -230,29 +230,14 @@ function AudioGrabacionConfirma() {
 
         //Iniciar Grabación
         var v_fichero=ObtenerFicheroAudio();
-        alert('1.2- Fichero: ' + v_fichero);
-
         _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
-        alert('1.3- new Media');
-
-        try{
-            alert('1.3.1 - Entra try');
-            _mediaAudio.startRecord();
-        }
-        catch (ex1){
-            alert('1.3.2 - Entra catch');
-            mensaje('ERROR - ' + ex1.message,"error");
-        }
-
-        alert('1.4- ' + startRecord);
+        _mediaAudio.startRecord();
 
         if(navigator.notification && navigator.notification.confirm){
-            alert('1.5- navigator.notification');
             navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
         }
         else
         {
-            alert('1.6- ' + v_mensaje);
             var v_retorno = confirm(v_mensaje);
             if (v_retorno){
                 AudioGrabacion(1);
@@ -262,7 +247,7 @@ function AudioGrabacionConfirma() {
             }
         }
     }
-    catch (ex){mensaje('ERROR - ' + ex.message,"error");}
+    catch (ex){mensaje(ex.message,"error");}
 }
 function onSuccessAudio() {
 }
