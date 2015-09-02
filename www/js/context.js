@@ -86,7 +86,9 @@ function loadSound_2(url) {
         //now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
         //here we will retrieve audio binary data via AJAX
         var request = new XMLHttpRequest();
-        request.open('GET', url, true);
+        var v_fichero1 = ObtenerFicheroAudio();
+        alert(v_fichero1);
+        request.open('GET', v_fichero1, true);
         request.responseType = 'arraybuffer'; //This asks the browser to populate the retrieved binary data in a array buffer
         request.onload = function(){
             //populate audio source from the retrieved binary data. This can be done using decodeAudioData function.
