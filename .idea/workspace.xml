@@ -56,8 +56,8 @@
       <file leaf-file-name="context.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/context.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3709091" vertical-offset="3621" max-vertical-offset="7565">
-              <caret line="231" column="22" selection-start-line="231" selection-start-column="22" selection-end-line="231" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.4728192" vertical-offset="3621" max-vertical-offset="7582">
+              <caret line="235" column="30" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -930,8 +930,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/context.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3709091" vertical-offset="3621" max-vertical-offset="7565">
-          <caret line="231" column="22" selection-start-line="231" selection-start-column="22" selection-end-line="231" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.4728192" vertical-offset="3621" max-vertical-offset="7582">
+          <caret line="235" column="30" selection-start-line="235" selection-start-column="30" selection-end-line="235" selection-end-column="30" />
           <folding />
         </state>
       </provider>

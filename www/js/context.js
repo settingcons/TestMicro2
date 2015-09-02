@@ -233,17 +233,18 @@ function AudioGrabacionConfirma() {
         alert('1.2- Fichero: ' + v_fichero);
 
         _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
+        alert('1.3- new Media');
         _mediaAudio.startRecord();
 
-        alert('1.3- ' + startRecord);
+        alert('1.4- ' + startRecord);
 
         if(navigator.notification && navigator.notification.confirm){
-            alert('1.4- navigator.notification');
+            alert('1.5- navigator.notification');
             navigator.notification.confirm(v_mensaje,AudioGrabacion,v_titulo,v_botones);
         }
         else
         {
-            alert('1.5- ' + v_mensaje);
+            alert('1.6- ' + v_mensaje);
             var v_retorno = confirm(v_mensaje);
             if (v_retorno){
                 AudioGrabacion(1);
