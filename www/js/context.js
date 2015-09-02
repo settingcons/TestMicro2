@@ -458,7 +458,7 @@ function LeerFicheroAudioOKIOS(file){
 
 function TransformarFicheroAudioToBase64IOS(file) {
     file.type='audio/wav';
-    alert('file.pathname ' + file.pathname);
+    alert('file.toURI --> ' + file.toURI);
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
