@@ -1,4 +1,4 @@
-var context;
+
 var sound;
 var source;
 
@@ -8,8 +8,8 @@ audio.loop = false;
 audio.autoplay = false;
 var v_ficheroREC = "myfile001.wav";
 
-window.addEventListener("load", initMp3Player, false);
-
+//window.addEventListener("load", initMp3Player, false);
+/*
 function initMp3Player(){
 
     //context = new webkitAudioContext();
@@ -23,20 +23,17 @@ function initMp3Player(){
     analyser.connect(context.destination);
 
 }
+*/
 
-function deviceReady() {
-    try {
-        window.AudioContext = window.AudioContext || window.webkitAudioContext;
-        context = new AudioContext();
-
-    }
-    catch (ex){alert('deviceReady: '+ex.message);}
-}
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
-    //v_fichero = ObtenerFicheroAudio();
-    //loadSound(v_fichero);
+    try{
+        v_fichero = ObtenerFicheroAudio();
+        loadSound(v_fichero);
+    }
+    catch (ex){alert('Reproducir0: '+ex.message);}
+    /*
     try{
         playSound(_inciAudioFichero);
         alert('_inciAudioFichero');
@@ -45,7 +42,7 @@ function Reproducir0(){
         playSound(_inciAudioFichero_complet);
         alert('_inciAudioFichero_complet');
     }
-
+*/
 
 }
 

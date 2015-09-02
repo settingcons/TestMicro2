@@ -1,3 +1,4 @@
+var context;
 var app = {
     initialize: function() {
         this.bindEvents();
@@ -19,6 +20,10 @@ function deviceReady() {
         if(esIOS()){
             window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, CrearFicheroAudioIOS, ErrorCrearFicheroAudioIOS);
         }
+
+        window.AudioContext = window.AudioContext || window.webkitAudioContext;
+        context = new AudioContext();
+
 
         //window.requestFileSystem(1, 0, function(fileSystem){
         //}, function(e){
