@@ -213,13 +213,18 @@ function ErrorLoad(e) {
     alert(e.message);
 }
 function playSound(buffer) {
-    alert('entra playSound');
-    source = context.createBufferSource();
-    source.buffer = buffer;
-    source.connect(context.destination);
-    alert('Antes start');
-    source.start(0);
-    alert('Después start');
+    try{
+        alert('entra playSound');
+        source = context.createBufferSource();
+        source.buffer = buffer;
+        source.connect(context.destination);
+        alert('Antes start');
+        source.start(0);
+        alert('Después start');
+
+    }
+
+    catch (ex){alert('loadSound: '+ex.message);}
 }
 
 function parar(){
