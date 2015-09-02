@@ -36,7 +36,7 @@ function deviceReady() {
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     v_fichero = ObtenerFicheroAudio();
-    loadSound(v_fichero);
+    loadSound_2(v_fichero);
 }
 
 
