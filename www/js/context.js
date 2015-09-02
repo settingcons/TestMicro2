@@ -35,8 +35,18 @@ function deviceReady() {
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
-    v_fichero = ObtenerFicheroAudio();
-    loadSound(v_fichero);
+    //v_fichero = ObtenerFicheroAudio();
+    //loadSound(v_fichero);
+    try{
+        playSound(_inciAudioFichero);
+        alert('_inciAudioFichero');
+    }
+    catch (ex){
+        playSound(_inciAudioFichero_complet);
+        alert('_inciAudioFichero_complet');
+    }
+
+
 }
 
 
@@ -458,10 +468,10 @@ function LeerFicheroAudioOKIOS(file){
 
 function TransformarFicheroAudioToBase64IOS(file) {
     file.type='audio/wav';
-    alert(file.type);
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
+        _inciAudioFichero_complet = _inciAudioFichero;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
         var imagen = document.getElementById('imgAudioPlay');
         imagen.src = "images/play_red.png";

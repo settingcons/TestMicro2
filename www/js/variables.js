@@ -7,4 +7,5 @@ var _mediaAudioFicheroIOS = "testaudio.wav";
 var _mediaAudioFicheroIOSFullPath = "";
 
 var _inciAudioFichero;
+var _inciAudioFichero_complet;
 
