@@ -35,8 +35,8 @@ function deviceReady() {
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
-    v_fichero = "testaudio.wav";
-    loadSound_2(v_fichero);
+    v_fichero = ObtenerFicheroAudio();
+    loadSound(v_fichero);
 }
 
 
@@ -86,9 +86,8 @@ function loadSound_2(url) {
         //now retrieve some binary audio data from <audio>, ajax, input file or microphone and put it into a audio source object.
         //here we will retrieve audio binary data via AJAX
         var request = new XMLHttpRequest();
-        var v_fichero1 = ObtenerFicheroAudio();
-        alert(v_fichero1);
-        request.open('GET', v_fichero1, true);
+        alert(url);
+        request.open('GET', url, true);
         request.responseType = 'arraybuffer'; //This asks the browser to populate the retrieved binary data in a array buffer
         request.onload = function(){
             //populate audio source from the retrieved binary data. This can be done using decodeAudioData function.
@@ -125,11 +124,46 @@ function loadSound_2(url) {
 
 function loadSound(url) {
     try {
-        //alert(url);
+        alert(url);
         var request = new XMLHttpRequest();
         request.open('GET', url, true);
         request.responseType = 'arraybuffer';
+
         alert('loadSound1');
+        request.onload = function() {
+            alert('loadSound2');
+            context.decodeAudioData(request.response, function(buffer) {
+                alert('ok');
+                sound = buffer;
+                playSound(sound);
+                alert('Después playSound');
+            },ErrorLoad);
+        }
+//        request.onload = function () {
+//            // request.response is encoded... so decode it now
+//            alert('antes');
+//            context.decodeAudioData(request.response, function (buffer) {
+//alert('ok');
+//                sound = buffer;
+//            }, function (err) {
+//                alert('error');
+//                alert(err.message);
+//            });
+//        }
+
+        request.send();
+    }
+    catch (ex){alert('loadSound: '+ex.message);}
+}
+
+function loadSound_OLD(url) {
+    try {
+        //alert(url);
+        var request = new XMLHttpRequest();
+        alert(url);
+        request.open('GET', url, true);
+        request.responseType = 'arraybuffer';
+
 
         if(esIOS()){
             alert('esIOS: loadSound');
