@@ -63,8 +63,6 @@ document.getElementById('recordAudio_Push').addEventListener('touchstart',functi
     startTime = new Date().getTime();
     flag = false;
 
-    //document.getElementById('lbllegend0').innerHTML="Grabando...";
-    document.getElementById('lbllegend').innerHTML="Grabando... DESLICE PARA CANCELAR";
     document.getElementById('divlegend').style.visibility="visible";
     //document.getElementById('recImg').style.visibility="visible";
     //document.getElementById('recordAudio_Push').src="img/micro_push_rec.png";
