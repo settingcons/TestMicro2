@@ -232,14 +232,17 @@ function AudioGrabacionConfirma() {
         var v_fichero=ObtenerFicheroAudio();
         alert('1.2- Fichero: ' + v_fichero);
 
-        var _mediaAudio = null;
-
         _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
         alert('1.3- new Media');
+
         try{
+            alert('1.3.1 - Entra try');
             _mediaAudio.startRecord();
         }
-        catch (ex1){mensaje('ERROR - ' + ex1.message,"error");}
+        catch (ex1){
+            alert('1.3.2 - Entra catch');
+            mensaje('ERROR - ' + ex1.message,"error");
+        }
 
         alert('1.4- ' + startRecord);
 
