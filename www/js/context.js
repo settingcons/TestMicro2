@@ -28,6 +28,7 @@ function initMp3Player(){
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
+    alert(fileSystem.root.fullPath);
     try{
         v_fichero = ObtenerFicheroAudio();
         loadSound_2(v_fichero);
