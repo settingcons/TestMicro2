@@ -57,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/www/js/context.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.74545455" vertical-offset="7205" max-vertical-offset="8092">
-              <caret line="460" column="19" selection-start-line="460" selection-start-column="19" selection-end-line="460" selection-end-column="19" />
+              <caret line="460" column="29" selection-start-line="460" selection-start-column="29" selection-end-line="460" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -295,7 +295,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1298" height="994" extended-state="0" />
+    <frame x="-9" y="-9" width="1298" height="994" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -949,7 +949,7 @@
     <entry file="file://$PROJECT_DIR$/www/js/context.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.74545455" vertical-offset="7205" max-vertical-offset="8092">
-          <caret line="460" column="19" selection-start-line="460" selection-start-column="19" selection-end-line="460" selection-end-column="19" />
+          <caret line="460" column="29" selection-start-line="460" selection-start-column="29" selection-end-line="460" selection-end-column="29" />
           <folding />
         </state>
       </provider>
