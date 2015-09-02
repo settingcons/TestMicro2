@@ -33,7 +33,9 @@ function deviceReady() {
 }
 
 function Reproducir0(){
-    v_fichero = "audio/1ra-e.mp3";
+    //v_fichero = "audio/1ra-e.mp3";
+    //v_fichero = "audio/testaudio.wav";
+    v_fichero = "audio/myfile001.wav";
     loadSound_2(v_fichero);
 }
 
@@ -50,7 +52,6 @@ function Reproducir(){
     v_fichero = "audio/testaudio.wav";
     loadSound(v_fichero);
 }
-
 
 var mySource;
 function bufferSoundiOS(event) {
@@ -179,6 +180,11 @@ function parar(){
     source.stop();
 }
 
+
+/*************/
+/*   OLD    */
+/*************/
+/*
 function play(idx){
     switch(idx) {
         case 0:
@@ -190,7 +196,7 @@ function play(idx){
     }
     audio.play();
 }
-
+*/
 
 /***********************************************************************************************************/
 /***********************************************************************************************************/
