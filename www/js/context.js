@@ -209,6 +209,7 @@ function ObtenerFicheroAudio(){
     if(esIOS())
     {
         //alert('ios');
+        
         //return _mediaAudioFicheroIOS;
         return _mediaAudioFicheroIOSFullPath;
     }
