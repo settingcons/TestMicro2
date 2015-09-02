@@ -36,14 +36,14 @@ function deviceReady() {
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     v_fichero = ObtenerFicheroAudio();
-    loadSound_2(v_fichero);
+    loadSound(v_fichero);
 }
 
 
 function Reproducir1(){
     var v_fichero = _mediaAudioFicheroIOS;
     v_fichero = "audio/1ra-e.mp3";
-    loadSound(v_fichero);
+    loadSound_2(v_fichero);
 }
 
 function Reproducir(){
@@ -458,6 +458,7 @@ function LeerFicheroAudioOKIOS(file){
 
 function TransformarFicheroAudioToBase64IOS(file) {
     file.type='audio/wav';
+    alert(file.uri);
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
