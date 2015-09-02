@@ -16,7 +16,9 @@ var app = {
 function deviceReady() {
     try {
 
-        window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, gotFS, onErrorDevideReady);
+        if(esIOS()){
+            window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, CrearFicheroAudioIOS, ErrorCrearFicheroAudioIOS);
+        }
 
         //window.requestFileSystem(1, 0, function(fileSystem){
         //}, function(e){

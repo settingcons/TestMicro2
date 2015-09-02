@@ -35,8 +35,7 @@ function deviceReady() {
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
-    v_fichero = "audio/testaudio.wav";
-    //v_fichero = "audio/myfile001.wav";
+    v_fichero = "testaudio.wav";
     loadSound_2(v_fichero);
 }
 
@@ -209,7 +208,7 @@ function ObtenerFicheroAudio(){
     if(esIOS())
     {
         //alert('ios');
-        
+
         //return _mediaAudioFicheroIOS;
         return _mediaAudioFicheroIOSFullPath;
     }
