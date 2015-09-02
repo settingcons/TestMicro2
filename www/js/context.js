@@ -229,7 +229,7 @@ function AudioGrabacionConfirma() {
         v_imagen.src = "images/play_gray.png";
 
         //Iniciar Grabación
-        var v_fichero=_mediaAudioFicheroIOS; ObtenerFicheroAudio();
+        var v_fichero=ObtenerFicheroAudio();
         alert('1.2- Fichero: ' + v_fichero);
 
         _mediaAudio = new Media(v_fichero,onSuccessAudio,onErrorAudio);
