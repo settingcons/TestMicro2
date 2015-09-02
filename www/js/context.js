@@ -30,7 +30,7 @@ function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     try{
         v_fichero = ObtenerFicheroAudio();
-        loadSound(v_fichero);
+        loadSound_2(v_fichero);
     }
     catch (ex){alert('Reproducir0: '+ex.message);}
     /*
@@ -74,8 +74,8 @@ function loadSound_2(url) {
     try
     {
         // Create a instance of AudioContext interface
-        window.AudioContext = window.AudioContext||window.webkitAudioContext||window.mozAudioContext;
-        context = new AudioContext();
+        //window.AudioContext = window.AudioContext||window.webkitAudioContext||window.mozAudioContext;
+        //context = new AudioContext();
 
         var source = context.createBufferSource(); //this represents the audio source. We need to now populate it with binary data.
 
