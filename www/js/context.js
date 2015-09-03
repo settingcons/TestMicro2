@@ -35,11 +35,12 @@ function Reproducir0(){
 
         //para iOs
         //https://github.com/apache/cordova-plugin-file/blob/master/doc/es/index.md
+        //      / var/mobile/Applications/< UUID > /
         try{
             var deviceID = device.uuid;
-            alert(deviceID);
-            v_fichero = "audio/1ra-e.mp3";
-            loadSound( v_fichero);
+            var sPath = 'var/mobile/' + deviceID + '/' + v_fichero;
+            alert(sPath);
+            loadSound(sPath);
         }
         catch (ex){
             alert('Reproducir0: '+ex.message);
