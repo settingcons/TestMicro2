@@ -24,16 +24,15 @@ function initMp3Player(){
 
 }
 */
+
+//v_fichero = "//localhost/temporary/var/mobile/Applications/" + deviceID + "/Documents" + v_fichero;
+
 function ReproducirVarios(idx){
     var deviceID = device.uuid;
     switch(idx) {
         case 0:
-            //v_fichero = ObtenerFicheroAudio();
-            //loadSound('Documents' + v_fichero);
-
-            v_fichero = "//localhost/temporary/var/mobile/Applications/" + deviceID + "/Documents" + v_fichero;
-            alert(v_fichero);
-            loadSound(v_fichero);
+            v_fichero = ObtenerFicheroAudio();
+            loadSound('Documents' + v_fichero);
             break;
         case 1:
             v_fichero = ObtenerFicheroAudio();
@@ -45,7 +44,7 @@ function ReproducirVarios(idx){
             break;
         case 3:
             v_fichero = ObtenerFicheroAudio();
-            loadSound('tmp' + v_fichero);
+            loadSound('/tmp' + v_fichero);
             break;
     }
     audio.play();
