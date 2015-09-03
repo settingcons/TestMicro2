@@ -33,15 +33,25 @@ function Reproducir0(){
         //alert('tmp' + v_fichero);
         //loadSound('tmp' + v_fichero);
 
-        v_fichero = "audio/1ra-e.mp3";
-        loadSound( v_fichero);
+        //para iOs
+        //https://github.com/apache/cordova-plugin-file/blob/master/doc/es/index.md
+        try{
+            var deviceID = device.uuid;
+            alert(deviceID);
+            v_fichero = "audio/1ra-e.mp3";
+            loadSound( v_fichero);
+        }
+        catch (ex){
+            alert('Reproducir0: '+ex.message);
+        }
+
     }
-    catch (ex){
+    catch (ex9){
         try{
             alert('Library/Cache' + v_fichero);
             loadSound('Library/Cache' + v_fichero);
         }
-        catch (ex1){alert('Reproducir0: '+ex1.message);}
+        catch (ex9){alert('Reproducir0: '+ex9.message);}
 
     }
     /*
