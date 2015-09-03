@@ -24,7 +24,7 @@ function initMp3Player(){
 
 }
 */
-
+//var sPath=
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
@@ -36,9 +36,12 @@ function Reproducir0(){
         //para iOs
         //https://github.com/apache/cordova-plugin-file/blob/master/doc/es/index.md
         //      / var/mobile/Applications/< UUID > /
+        // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
+        // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
             var deviceID = device.uuid;
-            var sPath = 'var/mobile/' + deviceID + '/tmp' + v_fichero;
+            //var sPath = 'var/mobile/' + deviceID + '/tmp' + v_fichero;
+            var sPath = 'mobile/' + deviceID + '/tmp' + v_fichero;
             alert(sPath);
             loadSound(sPath);
         }
