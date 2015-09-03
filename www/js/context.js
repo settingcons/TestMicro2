@@ -29,9 +29,12 @@ function initMp3Player(){
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     try{
-        v_fichero = ObtenerFicheroAudio();
-        alert('tmp' + v_fichero);
-        loadSound('tmp' + v_fichero);
+        //v_fichero = ObtenerFicheroAudio();
+        //alert('tmp' + v_fichero);
+        //loadSound('tmp' + v_fichero);
+
+        v_fichero = "audio/1ra-e.mp3";
+        loadSound( v_fichero);
     }
     catch (ex){
         try{
@@ -147,6 +150,7 @@ function loadSound(url) {
         alert('loadSound1');
 
         try {
+            alert('Primer Try');
             request.onload = function() {
                 alert('loadSound2');
                 context.decodeAudioData(request.response, function(buffer) {
@@ -156,7 +160,7 @@ function loadSound(url) {
                     alert('Después playSound');
                 },ErrorLoad);
             }
-
+            alert('Despuçes request.onload Primer Try');
         }
         catch (ex1){alert('loadSound: '+ex1.message);}
 //        request.onload = function () {
