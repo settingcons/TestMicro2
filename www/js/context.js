@@ -357,6 +357,7 @@ function onErrorAudio(error) {
 
 function AudioGrabacion(respuesta){
     try{
+        alert(respuesta);
         //Finalizar grabación
         _mediaAudio.stopRecord();
         if (respuesta==1) {
@@ -491,9 +492,6 @@ function ErrorCrearFicheroAudioIOS() {
 }
 function CrearFicheroAudioIOS(fileSystem) {
     fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false}, CrearFicheroAudioIOSCorrecto, CrearFicheroAudioIOSError);
-    alert('CrearFicheroAudioIOS URI: '+fileSystem.toURI());
-    alert('CrearFicheroAudioIOS fullPath: '+fileSystem.fullPath);
-
 }
 
 function CrearFicheroAudioIOSError(error) {
@@ -509,8 +507,6 @@ function CrearFicheroAudioIOSCorrecto(fileEntry) {
 
 function ConvertirFicheroAudioToBase64IOS(fileSystem) {
     fileSystem.root.getFile(_mediaAudioFicheroIOS,{create: false,exclusive:false}, LeerFicheroAudioIOS, onErrorAudio);
-    alert('ConvertirFicheroAudioToBase64IOS URI: '+fileSystem.toURI());
-    alert('ConvertirFicheroAudioToBase64IOS fullPath: '+fileSystem.fullPath);
 }
 
 function LeerFicheroAudioIOS(fileEntry) {

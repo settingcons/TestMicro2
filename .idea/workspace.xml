@@ -27,9 +27,11 @@
       <file leaf-file-name="context.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/context.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44363636" vertical-offset="8338" max-vertical-offset="9197">
-              <caret line="512" column="44" selection-start-line="512" selection-start-column="44" selection-end-line="512" selection-end-column="44" />
-              <folding />
+            <state vertical-scroll-proportion="0.45132744" vertical-offset="5406" max-vertical-offset="9112">
+              <caret line="339" column="27" selection-start-line="339" selection-start-column="27" selection-end-line="339" selection-end-column="27" />
+              <folding>
+                <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -312,7 +314,9 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -347,7 +351,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7463">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -919,9 +925,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/context.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44363636" vertical-offset="8338" max-vertical-offset="9197">
-          <caret line="512" column="44" selection-start-line="512" selection-start-column="44" selection-end-line="512" selection-end-column="44" />
-          <folding />
+        <state vertical-scroll-proportion="0.45132744" vertical-offset="5406" max-vertical-offset="9112">
+          <caret line="339" column="27" selection-start-line="339" selection-start-column="27" selection-end-line="339" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
