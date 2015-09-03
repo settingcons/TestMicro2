@@ -29,7 +29,7 @@ function initMp3Player(){
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     try{
-        //v_fichero = ObtenerFicheroAudio();
+        v_fichero = ObtenerFicheroAudio();
         //alert('tmp' + v_fichero);
         //loadSound('tmp' + v_fichero);
 
