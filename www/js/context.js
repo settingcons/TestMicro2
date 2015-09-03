@@ -29,7 +29,8 @@ function initMp3Player(){
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     try{
-        v_fichero = _mediaAudioFicheroIOS; //ObtenerFicheroAudio();
+        //v_fichero = _mediaAudioFicheroIOS; //ObtenerFicheroAudio();
+        v_fichero = ObtenerFicheroAudio();
         alert(v_fichero);
         //loadSound('tmp' + v_fichero);
 
