@@ -29,8 +29,8 @@ function initMp3Player(){
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     try{
-        v_fichero = ObtenerFicheroAudio();
-        //alert('tmp' + v_fichero);
+        v_fichero = _mediaAudioFicheroIOS; //ObtenerFicheroAudio();
+        alert(v_fichero);
         //loadSound('tmp' + v_fichero);
 
         //para iOs
@@ -45,8 +45,8 @@ function Reproducir0(){
             //sPath = 'var/mobile/Applications/' + deviceID +  v_fichero;
             //iOS v8
             sPath = 'var/mobile/Containers/' + deviceID +  '/tmp' + v_fichero;
-            loadSound(sPath);
-            //loadSound(v_fichero);
+            //loadSound(sPath);
+            loadSound(v_fichero);
         }
         catch (ex){
             alert('Reproducir0: '+ex.message);
@@ -357,7 +357,6 @@ function onErrorAudio(error) {
 
 function AudioGrabacion(respuesta){
     try{
-        alert(respuesta);
         //Finalizar grabación
         _mediaAudio.stopRecord();
         if (respuesta==1) {
