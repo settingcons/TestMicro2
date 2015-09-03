@@ -40,7 +40,7 @@ function Reproducir0(){
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
             var deviceID = device.uuid;
-            alert(window.requestFileSystem);
+            alert(file_system.root);
             //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
             var sPath = '';
             //iOS v7 e inferior
@@ -516,7 +516,7 @@ function LeerFicheroAudioOKIOS(file){
 
 function TransformarFicheroAudioToBase64IOS(file) {
     file.type='audio/wav';
-    alert(file.url());
+    alert(file.fullPath);
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
