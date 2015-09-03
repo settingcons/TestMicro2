@@ -27,9 +27,24 @@
       <file leaf-file-name="context.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/context.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55878633" vertical-offset="255" max-vertical-offset="9061">
-              <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.44363636" vertical-offset="8338" max-vertical-offset="9197">
+              <caret line="512" column="44" selection-start-line="512" selection-start-column="44" selection-end-line="512" selection-end-column="44" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="audio.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/js/audio.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.2352943" vertical-offset="383" max-vertical-offset="3281">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!block;n#PlayAudioFin#0" expanded="false" />
+                <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
+                <element signature="n#!!block;n#onErrorAudio#0" expanded="false" />
+                <element signature="n#!!block;n#setAudioPosition#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -747,6 +762,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -830,19 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/audio.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="3281">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!block;n#PlayAudioFin#0" expanded="false" />
-            <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
-            <element signature="n#!!block;n#onErrorAudio#0" expanded="false" />
-            <element signature="n#!!block;n#setAudioPosition#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../VozEfecto/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.647058" vertical-offset="641" max-vertical-offset="1751">
@@ -901,10 +904,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/audio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.2352943" vertical-offset="383" max-vertical-offset="3281">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#PlayAudioFin#0" expanded="false" />
+            <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
+            <element signature="n#!!block;n#onErrorAudio#0" expanded="false" />
+            <element signature="n#!!block;n#setAudioPosition#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/context.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55878633" vertical-offset="255" max-vertical-offset="9061">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.44363636" vertical-offset="8338" max-vertical-offset="9197">
+          <caret line="512" column="44" selection-start-line="512" selection-start-column="44" selection-end-line="512" selection-end-column="44" />
           <folding />
         </state>
       </provider>

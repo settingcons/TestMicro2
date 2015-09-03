@@ -39,7 +39,6 @@ function Reproducir0(){
         // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
-            alert(DirectoryEntry.pathname);
             var deviceID = device.uuid;
             var sPath = '';
             //iOS v7 e inferior
@@ -78,9 +77,13 @@ function Reproducir0(){
 
 function Reproducir1(){
     //var v_fichero = _mediaAudioFicheroIOS;
-    v_fichero = "audio/1ra-e.mp3";
-    //loadSound_2(v_fichero);
-    loadSound(v_fichero);
+    //v_fichero = "audio/1ra-e.mp3";
+    //loadSound(v_fichero);
+
+    mi_mediaAudioReproducir = new Media(myFileNameURI, onSuccessAudio, onErrorAudioPlay);
+    // Play audio
+    mi_mediaAudioReproducir.play();
+
 }
 
 function Reproducir(){
@@ -488,6 +491,9 @@ function ErrorCrearFicheroAudioIOS() {
 }
 function CrearFicheroAudioIOS(fileSystem) {
     fileSystem.root.getFile(_mediaAudioFicheroIOS, {create: true, exclusive: false}, CrearFicheroAudioIOSCorrecto, CrearFicheroAudioIOSError);
+    alert('CrearFicheroAudioIOS URI: '+fileSystem.toURI());
+    alert('CrearFicheroAudioIOS fullPath: '+fileSystem.fullPath);
+
 }
 
 function CrearFicheroAudioIOSError(error) {
@@ -503,6 +509,8 @@ function CrearFicheroAudioIOSCorrecto(fileEntry) {
 
 function ConvertirFicheroAudioToBase64IOS(fileSystem) {
     fileSystem.root.getFile(_mediaAudioFicheroIOS,{create: false,exclusive:false}, LeerFicheroAudioIOS, onErrorAudio);
+    alert('ConvertirFicheroAudioToBase64IOS URI: '+fileSystem.toURI());
+    alert('ConvertirFicheroAudioToBase64IOS fullPath: '+fileSystem.fullPath);
 }
 
 function LeerFicheroAudioIOS(fileEntry) {
