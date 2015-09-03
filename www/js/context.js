@@ -30,8 +30,9 @@ function ReproducirVarios(idx){
         case 0:
             //v_fichero = ObtenerFicheroAudio();
             //loadSound('Documents' + v_fichero);
-            
+
             v_fichero = "file://localhost/temporary/var/mobile/Applications/" + deviceID + "/Documents" + v_fichero;
+            alert(v_fichero);
             loadSound(v_fichero);
             break;
         case 1:
