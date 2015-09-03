@@ -40,9 +40,14 @@ function Reproducir0(){
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
             //var deviceID = device.uuid;
-            //var sPath = 'mobile/' + deviceID + '/tmp' + v_fichero;
-            //loadSound(sPath);
-            loadSound(v_fichero);
+            //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
+            var sPath = '';
+            //iOS v7 e inferior
+            //sPath = 'var/mobile/Applications/' + deviceID +  v_fichero;
+            //iOS v8
+            sPath = 'var/mobile/Containers/' + deviceID +  v_fichero;
+            loadSound(sPath);
+            //loadSound(v_fichero);
         }
         catch (ex){
             alert('Reproducir0: '+ex.message);
@@ -173,7 +178,7 @@ function loadSound(url) {
                     alert('Después playSound');
                 },ErrorLoad);
             }
-            alert('Despuçes request.onload Primer Try');
+            alert('Después request.onload Primer Try');
         }
         catch (ex1){alert('loadSound: '+ex1.message);}
 //        request.onload = function () {
@@ -356,7 +361,6 @@ function AudioGrabacion(respuesta){
             if(esIOS())
             {
                 window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, ConvertirFicheroAudioToBase64IOS, onErrorAudio);
-                alert('iOS - LocalFileSystem.TEMPORARY');
             }
             else {
                 window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, ConvertirFicheroAudioToBase64, onErrorAudio);
@@ -499,22 +503,18 @@ function CrearFicheroAudioIOSCorrecto(fileEntry) {
 
 
 function ConvertirFicheroAudioToBase64IOS(fileSystem) {
-    alert('ConvertirFicheroAudioToBase64IOS : fileSystem - ' + fileSystem);
     fileSystem.root.getFile(_mediaAudioFicheroIOS,{create: false,exclusive:false}, LeerFicheroAudioIOS, onErrorAudio);
 }
 
 function LeerFicheroAudioIOS(fileEntry) {
-    alert('LeerFicheroAudioIOS : fileEntry - ' + fileEntry);
     fileEntry.file(LeerFicheroAudioOKIOS, onErrorAudio);
 }
 
 function LeerFicheroAudioOKIOS(file){
-    alert('LeerFicheroAudioOKIOS : file - ' + file);
     TransformarFicheroAudioToBase64IOS(file);
 }
 
 function TransformarFicheroAudioToBase64IOS(file) {
-    alert('TransformarFicheroAudioToBase64IOS : file - ' + file);
     file.type='audio/wav';
     var reader = new FileReader();
     reader.onloadend = function(evt) {
