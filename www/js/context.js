@@ -31,12 +31,12 @@ function Reproducir0(){
     try{
         v_fichero = ObtenerFicheroAudio();
         alert('tmp' + v_fichero);
-        loadSound_2('tmp' + v_fichero);
+        loadSound('tmp' + v_fichero);
     }
     catch (ex){
         try{
             alert('Library/Cache' + v_fichero);
-            loadSound_2('Library/Cache' + v_fichero);
+            loadSound('Library/Cache' + v_fichero);
         }
         catch (ex1){alert('Reproducir0: '+ex1.message);}
 
