@@ -61,8 +61,8 @@
       <file leaf-file-name="context.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/context.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7037516" vertical-offset="51" max-vertical-offset="9724">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.65976715" vertical-offset="51" max-vertical-offset="9724">
+              <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding>
                 <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
               </folding>
@@ -978,8 +978,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/context.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7037516" vertical-offset="51" max-vertical-offset="9724">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.65976715" vertical-offset="51" max-vertical-offset="9724">
+          <caret line="33" column="27" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
           <folding>
             <element signature="n#!!block;n#onSuccessAudio#0" expanded="false" />
           </folding>
