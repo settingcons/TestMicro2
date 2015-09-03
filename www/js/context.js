@@ -39,7 +39,9 @@ function Reproducir0(){
         // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
+            alert(fileSystem.root.fullPath);
             var deviceID = device.uuid;
+
             //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
             var sPath = '';
             //iOS v7 e inferior
