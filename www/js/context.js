@@ -527,16 +527,16 @@ function CrearFicheroAudioIOSError(error) {
 function CrearFicheroAudioIOSCorrecto(fileEntry) {
     _mediaAudioFicheroIOSFullPath=fileEntry.fullPath;
     //fileEntry investigar la propiedades --> fileSystem.root.getFile
-    /*
     try{
-        alert('toURL: ' + fileEntry.toURL);
+        alert('fileEntry: ' + fileEntry);
+/*        alert('toURL: ' + fileEntry.toURL);
         alert('fullPath: ' + fileEntry.fullPath);
         alert('toURI: ' + fileEntry.toURI);
         alert('getParent: ' + fileEntry.getParent);
         alert('file: ' + fileEntry.file);
+ */
     }
     catch (ex9){alert('CrearFicheroAudioIOSCorrecto: '+ex9.message);}
-    */
 }
 
 
