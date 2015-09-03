@@ -504,6 +504,7 @@ function CrearFicheroAudioIOSCorrecto(fileEntry) {
 
 function ConvertirFicheroAudioToBase64IOS(fileSystem) {
     fileSystem.root.getFile(_mediaAudioFicheroIOS,{create: false,exclusive:false}, LeerFicheroAudioIOS, onErrorAudio);
+    alert(_mediaAudioFicheroIOS);
 }
 
 function LeerFicheroAudioIOS(fileEntry) {
