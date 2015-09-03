@@ -31,7 +31,7 @@ function ReproducirVarios(idx){
             //v_fichero = ObtenerFicheroAudio();
             //loadSound('Documents' + v_fichero);
 
-            v_fichero = "file://localhost/temporary/var/mobile/Applications/" + deviceID + "/Documents" + v_fichero;
+            v_fichero = "file:///localhost/temporary/var/mobile/Applications/" + deviceID + "/Documents" + v_fichero;
             alert(v_fichero);
             loadSound(v_fichero);
             break;
@@ -528,6 +528,7 @@ function CrearFicheroAudioIOSError(error) {
 function CrearFicheroAudioIOSCorrecto(fileEntry) {
     _mediaAudioFicheroIOSFullPath=fileEntry.fullPath;
     //fileEntry investigar la propiedades --> fileSystem.root.getFile
+    /*
     try{
         alert('toURL: ' + fileEntry.toURL);
         alert('fullPath: ' + fileEntry.fullPath);
@@ -536,6 +537,7 @@ function CrearFicheroAudioIOSCorrecto(fileEntry) {
         alert('file: ' + fileEntry.file);
     }
     catch (ex9){alert('CrearFicheroAudioIOSCorrecto: '+ex9.message);}
+    */
 }
 
 
