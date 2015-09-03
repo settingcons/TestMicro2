@@ -24,14 +24,34 @@ function initMp3Player(){
 
 }
 */
-//var sPath=
+function ReproducirVarios(idx){
+    switch(idx) {
+        case 0:
+            v_fichero = ObtenerFicheroAudio();
+            loadSound('Documents' + v_fichero);
+            break;
+        case 1:
+            v_fichero = ObtenerFicheroAudio();
+            loadSound('Documents/Inbox' + v_fichero);
+            break;
+        case 2:
+            v_fichero = ObtenerFicheroAudio();
+            loadSound('Library' + v_fichero);
+            break;
+        case 3:
+            v_fichero = ObtenerFicheroAudio();
+            loadSound('tmp' + v_fichero);
+            break;
+    }
+    audio.play();
+
+}
 
 function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     try{
         //v_fichero = _mediaAudioFicheroIOS; //ObtenerFicheroAudio();
         v_fichero = ObtenerFicheroAudio();
-        alert(v_fichero);
         //loadSound('tmp' + v_fichero);
 
         //para iOs
@@ -502,6 +522,7 @@ function CrearFicheroAudioIOSError(error) {
 
 function CrearFicheroAudioIOSCorrecto(fileEntry) {
     _mediaAudioFicheroIOSFullPath=fileEntry.fullPath;
+    //fileEntry investigar la propiedades --> fileSystem.root.getFile
 }
 
 
