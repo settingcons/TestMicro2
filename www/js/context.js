@@ -494,6 +494,7 @@ function CrearFicheroAudioIOSError(error) {
 
 function CrearFicheroAudioIOSCorrecto(fileEntry) {
     _mediaAudioFicheroIOSFullPath=fileEntry.fullPath;
+    alert(_mediaAudioFicheroIOSFullPath);
 
 }
 
