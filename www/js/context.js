@@ -39,11 +39,10 @@ function Reproducir0(){
         // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
-            var deviceID = device.uuid;
-            //var sPath = 'var/mobile/' + deviceID + '/tmp' + v_fichero;
-            var sPath = 'mobile/' + deviceID + '/tmp' + v_fichero;
-            alert(sPath);
-            loadSound(sPath);
+            //var deviceID = device.uuid;
+            //var sPath = 'mobile/' + deviceID + '/tmp' + v_fichero;
+            //loadSound(sPath);
+            loadSound(v_fichero);
         }
         catch (ex){
             alert('Reproducir0: '+ex.message);
