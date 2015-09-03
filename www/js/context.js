@@ -38,7 +38,7 @@ function Reproducir0(){
         //      / var/mobile/Applications/< UUID > /
         try{
             var deviceID = device.uuid;
-            var sPath = 'var/mobile/' + deviceID + '/' + v_fichero;
+            var sPath = 'var/mobile/' + deviceID + v_fichero;
             alert(sPath);
             loadSound(sPath);
         }
