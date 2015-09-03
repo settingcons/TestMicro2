@@ -528,6 +528,7 @@ function CrearFicheroAudioIOSCorrecto(fileEntry) {
         alert('toURI: ' + fileEntry.toURI);
         alert('getParent: ' + fileEntry.getParent);
         alert('file: ' + fileEntry.file);
+        alert('toURL: ' + fileEntry.toURL);
     }
     catch (ex9){alert('CrearFicheroAudioIOSCorrecto: '+ex9.message);}
 }
