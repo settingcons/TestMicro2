@@ -39,6 +39,7 @@ function Reproducir0(){
         // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
+            alert(DirectoryEntry.pathname);
             var deviceID = device.uuid;
             var sPath = '';
             //iOS v7 e inferior
@@ -519,7 +520,6 @@ function TransformarFicheroAudioToBase64IOS(file) {
         _inciAudioFichero = evt.target.result;
         _inciAudioFichero_complet = _inciAudioFichero;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
-        alert('_inciAudioFichero: ' + _inciAudioFichero);
         var imagen = document.getElementById('imgAudioPlay');
         imagen.src = "images/play_red.png";
     };
