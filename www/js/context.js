@@ -39,7 +39,7 @@ function Reproducir0(){
         // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
-            //var deviceID = device.uuid;
+            var deviceID = device.uuid;
             //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
             var sPath = '';
             //iOS v7 e inferior
@@ -356,7 +356,6 @@ function AudioGrabacion(respuesta){
     try{
         //Finalizar grabación
         _mediaAudio.stopRecord();
-        alert('Stop AudioGrabacion');
         if (respuesta==1) {
             if(esIOS())
             {
