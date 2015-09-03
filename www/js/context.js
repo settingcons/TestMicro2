@@ -40,7 +40,7 @@ function Reproducir0(){
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
             var deviceID = device.uuid;
-            alert(file_system.root);
+            alert('LocalFileSystem : ' + LocalFileSystem);
             //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
             var sPath = '';
             //iOS v7 e inferior
