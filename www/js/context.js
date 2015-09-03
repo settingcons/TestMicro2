@@ -30,9 +30,17 @@ function Reproducir0(){
     //v_fichero = "audio/1ra-e.mp3";
     try{
         v_fichero = ObtenerFicheroAudio();
-        loadSound_2(v_fichero);
+        alert('tmp' + v_fichero);
+        loadSound_2('tmp' + v_fichero);
     }
-    catch (ex){alert('Reproducir0: '+ex.message);}
+    catch (ex){
+        try{
+            alert('Library/Cache' + v_fichero);
+            loadSound_2('Library/Cache' + v_fichero);
+        }
+        catch (ex1){alert('Reproducir0: '+ex1.message);}
+
+    }
     /*
     try{
         playSound(_inciAudioFichero);
