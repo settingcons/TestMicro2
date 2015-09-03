@@ -145,15 +145,20 @@ function loadSound(url) {
         request.responseType = 'arraybuffer';
 
         alert('loadSound1');
-        request.onload = function() {
-            alert('loadSound2');
-            context.decodeAudioData(request.response, function(buffer) {
-                alert('ok');
-                sound = buffer;
-                playSound(sound);
-                alert('Después playSound');
-            },ErrorLoad);
+
+        try {
+            request.onload = function() {
+                alert('loadSound2');
+                context.decodeAudioData(request.response, function(buffer) {
+                    alert('ok');
+                    sound = buffer;
+                    playSound(sound);
+                    alert('Después playSound');
+                },ErrorLoad);
+            }
+
         }
+        catch (ex1){alert('loadSound: '+ex1.message);}
 //        request.onload = function () {
 //            // request.response is encoded... so decode it now
 //            alert('antes');
@@ -166,7 +171,9 @@ function loadSound(url) {
 //            });
 //        }
 
+        alert('Antes del request.Send');
         request.send();
+        alert('Después del request.Send');
     }
     catch (ex){alert('loadSound: '+ex.message);}
 }
@@ -224,8 +231,18 @@ function playSound(buffer) {
         source.buffer = buffer;
         source.connect(context.destination);
         alert('Antes start');
-        source.start(0);
-        alert('Después start');
+        if(esIOS()){
+            alert('Antes noteOn(0)');
+            source.noteOn(0);
+            alert('Después noteOn(0)');
+        }
+        else{
+            alert('Antes start(0)');
+            source.start(0);
+            alert('Después start(0)');
+        }
+
+        alert('Después start (dentro Try)');
 
     }
 
