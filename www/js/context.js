@@ -39,7 +39,7 @@ function Reproducir0(){
         // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
-            alert(LocalFileSystem.root);
+            alert(LocalFileSystem.TEMPORARY.root);
             var deviceID = device.uuid;
 
             //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
@@ -79,15 +79,15 @@ function Reproducir0(){
 
 
 function Reproducir1(){
-    var v_fichero = _mediaAudioFicheroIOS;
+    //var v_fichero = _mediaAudioFicheroIOS;
     v_fichero = "audio/1ra-e.mp3";
-    loadSound_2(v_fichero);
+    //loadSound_2(v_fichero);
+    loadSound(v_fichero);
 }
 
 function Reproducir(){
     alert('Reproducir1');
     var v_fichero = ObtenerFicheroAudio();
-    v_fichero = "audio/testaudio.wav";
     loadSound(v_fichero);
 }
 
