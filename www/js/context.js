@@ -40,8 +40,6 @@ function Reproducir0(){
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
             var deviceID = device.uuid;
-            alert('LocalFileSystem : ' + LocalFileSystem);
-            //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
             var sPath = '';
             //iOS v7 e inferior
             //sPath = 'var/mobile/Applications/' + deviceID +  v_fichero;
@@ -504,7 +502,6 @@ function CrearFicheroAudioIOSCorrecto(fileEntry) {
 
 function ConvertirFicheroAudioToBase64IOS(fileSystem) {
     fileSystem.root.getFile(_mediaAudioFicheroIOS,{create: false,exclusive:false}, LeerFicheroAudioIOS, onErrorAudio);
-    alert(_mediaAudioFicheroIOS);
 }
 
 function LeerFicheroAudioIOS(fileEntry) {
@@ -517,12 +514,12 @@ function LeerFicheroAudioOKIOS(file){
 
 function TransformarFicheroAudioToBase64IOS(file) {
     file.type='audio/wav';
-    alert(file.fullPath);
     var reader = new FileReader();
     reader.onloadend = function(evt) {
         _inciAudioFichero = evt.target.result;
         _inciAudioFichero_complet = _inciAudioFichero;
         _inciAudioFichero  =   _inciAudioFichero.toString().substring(_inciAudioFichero.toString().indexOf(",")+1);
+        alert('_inciAudioFichero: ' + _inciAudioFichero);
         var imagen = document.getElementById('imgAudioPlay');
         imagen.src = "images/play_red.png";
     };
