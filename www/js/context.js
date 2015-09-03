@@ -39,7 +39,7 @@ function Reproducir0(){
         // Sobre estructura de aplicaciones iOS: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html
         // otra url: https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/AccessingFilesandDirectories/AccessingFilesandDirectories.html
         try{
-            alert(LocalFileSystem.TEMPORARY.root);
+            alert(LocalFileSystem.root);
             var deviceID = device.uuid;
 
             //var sPath = 'var/mobile/Applications/' + deviceID + '/tmp' + v_fichero;
@@ -47,7 +47,7 @@ function Reproducir0(){
             //iOS v7 e inferior
             //sPath = 'var/mobile/Applications/' + deviceID +  v_fichero;
             //iOS v8
-            sPath = 'var/mobile/Containers/' + deviceID +  v_fichero;
+            sPath = 'var/mobile/Containers/' + deviceID +  '/tmp' + v_fichero;
             loadSound(sPath);
             //loadSound(v_fichero);
         }
